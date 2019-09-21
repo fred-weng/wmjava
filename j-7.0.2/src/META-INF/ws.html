@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><#0#></title>
+        <meta charset="UTF-8">
+        <link rel="icon" href="data:;base64,=">
+        <style type="text/css">
+            a {text-decoration: none;}
+            body {font-size:10pt;font-family: Courier New;}
+            .title {font-family: Arial;}
+            .type {color:#008080;}
+            .wsMethod {color:#800000;font-weight: bold;}
+            .keyword{color:#0000FF;}
+            .annotation {color:#00C8C8;}
+            .string{color:#FF00FF;}
+            .comment{color:#008000;}
+        </style>
+        <script type="text/javascript">
+            function post(u) {
+                var x = window.ActiveXObject ? new ActiveXObject("Microsoft.XMLHTTP") : new XMLHttpRequest();
+                x.open("POST", u, true);
+                x.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                x.onreadystatechange = function () {
+                    if (x.readyState === 4 && x.status === 200)
+                        alert(x.responseText);
+                };
+                var s = prompt("Enter the method's arguments, multiple separated by ',': ", "");
+                if (s !== null && s !== "")
+                    x.send('[' + s + ']');
+            }
+        </script>
+    </head>
+    <body>
+        <!--app name or app root link + class name-->
+        <h2 class="title"><#1#></h2>
+        <!--empty when app home page , class description when class page-->
+        <#2#> 
+        <hr/>
+        <!--web service link list or web method link list of web service class-->
+        <#3#> 
+        <hr/>
+        <i>ws 1.1.0 @Fred(wengmj)</i>
+    </body>
+</html>
